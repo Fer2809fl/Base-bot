@@ -1,20 +1,22 @@
 'use strict';
 
-const path = require('path');
-const readline = require('readline');
-const pino = require('pino');
-const qrcode = require('qrcode-terminal');
-const { Boom } = require('@hapi/boom');
+import path from 'path';
+import readline from 'readline';
+import { fileURLToPath } from 'url';
+import pino from 'pino';
+import qrcode from 'qrcode-terminal';
+import { Boom } from '@hapi/boom';
 
-const {
-  default: makeWASocket,
+import makeWASocket, {
   useMultiFileAuthState,
   fetchLatestBaileysVersion,
   DisconnectReason,
-} = require('@fer2809fl/baileys');
+} from '@fer2809fl/baileys';
 
-const config = require('./config');
-const { loadPlugins, handleMessage } = require('./lib/handler');
+import config from './config.js';
+import { loadPlugins, handleMessage } from './lib/handler.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function ask(text) {
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
@@ -40,7 +42,6 @@ async function startBot() {
     browser: [config.botName, 'Chrome', '1.0.0'],
   });
 
-  // Si aún no está vinculado, preguntamos el método (útil en Termux, sin navegador)
   if (!sock.authState.creds.registered) {
     if (config.usePairingCode === null) {
       const answer = await ask(
@@ -99,5 +100,5 @@ async function startBot() {
   return sock;
 }
 
-loadPlugins();
+await loadPlugins();
 startBot().catch((err) => console.error('❌ Error al iniciar el bot:', err));
