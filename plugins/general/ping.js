@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+export default {
   command: ['ping'],
   category: 'general',
   description: 'Muestra la velocidad de respuesta del bot',
