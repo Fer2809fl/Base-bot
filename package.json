@@ -1,0 +1,18 @@
+{
+  "name": "asta-base",
+  "version": "1.0.0",
+  "description": "Bot base de WhatsApp con Baileys (fork personalizado) en CommonJS",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@fer2809fl/baileys": "github:Fer2809fl/Bail",
+    "@hapi/boom": "^10.0.1",
+    "pino": "^9.3.2",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "author": "Fernando",
+  "license": "MIT"
+}
