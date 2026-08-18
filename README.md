@@ -22,7 +22,7 @@ asta-base/
 ## Instalación (Termux o cualquier entorno con Node)
 
 ```bash
-cd asta-base
+cd Base-bot
 npm install
 npm start
 ```
