@@ -1,9 +1,9 @@
 {
   "name": "asta-base",
   "version": "1.0.0",
-  "description": "Bot base de WhatsApp con Baileys (fork personalizado) en CommonJS",
+  "description": "Bot base de WhatsApp con Baileys (fork personalizado) en ESM",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
