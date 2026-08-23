@@ -4,4 +4,8 @@ export default {
   prefix: ['.', '#', '!'],
   authFolder: 'session',
   phoneNumber: '',
+
+  // Canal / Newsletter de WhatsApp
+  channelId: '120363405934516299@newsletter',
+  channelName: 'Asta Bot Oficial',
 };
