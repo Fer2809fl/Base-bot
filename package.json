@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "cd node_modules/tik-api && npm install && npm run build"
   },
   "dependencies": {
     "@fer2809fl/baileys": "github:Fer2809fl/Bail",
